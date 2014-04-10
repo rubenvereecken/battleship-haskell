@@ -1,20 +1,18 @@
-Battleship Haskell
-==================
+<h1>Battleship Haskell</h1>
 
-This project was created for the course Programming Paradigms at the University of Antwerp by Ruben Vereecken in 2014.
+<p>This project was created for the course Programming Paradigms at the University of Antwerp by Ruben Vereecken in 2014.</p>
 
-Running the game
-----------------
+<h2>Running the game</h2>
 
-To run the game one simply has to run `Battleship.main`. This can be done easiest by running `runhaskell Battleship.hs`.
+<p>To run the game one simply has to run <code>Battleship.main</code>. This can be done easiest by running <code>runhaskell Battleship.hs</code>.</p>
 
-The game interactively prompts for input. First names will be asked, then ship coordinates and afterwards the game can be
-played by interactively entering coordinates to target. Feedback will be provided about the effectiveness of the shot.
+<p>The game interactively prompts for input. First names will be asked, then ship coordinates and afterwards the game can be
+played by interactively entering coordinates to target. Feedback will be provided about the effectiveness of the shot.</p>
 
-Here is an example game where An utterly destroys Bert while Bert tries to hit An in the same spot over and over again.
-It is of course a happy day scenario with no faulty input.
+<p>Here is an example game where An utterly destroys Bert while Bert tries to hit An in the same spot over and over again.
+It is of course a happy day scenario with no faulty input.</p>
 
-```
+<p><code>
 An
 Bert
 (0,0);(0,1)
@@ -46,17 +44,17 @@ Bert
 (6,7)
 (7,9)
 (8,9)
-```
+</code></p>
 
-It can also be run using the following command.
+<p>It can also be run using the following command.</p>
 
-```
+<p><code>
 cat example.txt | runhaskell Battleship.hs
-```
+</code></p>
 
-Example output.
+<p>Example output.</p>
 
-```
+<p>```
 Who's Player 1
 Who's Player 2
 An's ships
@@ -92,12 +90,13 @@ It's An's turn. They get 4 shots.
 An Misses.
 An hit Bert at (7,9)!
 An hit Bert at (8,9)!
-You sunk my battleship!
-Bert lost.
-===========
-=  Recap  =
-===========
-Bert's field:
+You sunk my battleship!</p>
+
+<h1>Bert lost.</h1>
+
+<h1>=  Recap  =</h1>
+
+<p>Bert's field:
 ..........
 ..........
 ...x......
@@ -119,18 +118,17 @@ o.........
 ......xoo.
 ..........
 .....ooooo
-```
+```</p>
 
-About the implementation
-------------------------
+<h2>About the implementation</h2>
 
-Some basic error mechanisms are in place. Faulty input is detected and most IO errors are handled. In case anything goes
+<p>Some basic error mechanisms are in place. Faulty input is detected and most IO errors are handled. In case anything goes
 wrong the user is prompted to re-enter whatever they just tried to enter. Validity of a ship's
-location is checked as well: both whether it overlaps with others or whether it lies in a continuous straight line.
+location is checked as well: both whether it overlaps with others or whether it lies in a continuous straight line.</p>
 
-When the game's finished, both resulting playing boards will be showed with an ASCII representation.
+<p>When the game's finished, both resulting playing boards will be showed with an ASCII representation.</p>
 
-The program is written as Haskell-y as a strongly IO-oriented program allows. Since it's still a highly interactive game,
+<p>The program is written as Haskell-y as a strongly IO-oriented program allows. Since it's still a highly interactive game,
 this wasn't as clean as I'd have wanted, since Haskell is rather poor at handling sequential things. However, I tried
 keeping the impure and pure parts as separate as possible. On the surface there are some monolithic input gatherers
-that call pure and clean Haskell functions below. These can be detected by their `IO a` return types.
+that call pure and clean Haskell functions below. These can be detected by their <code>IO a</code> return types.</p>
